@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Debug" />
+	<File name="Item.h" open="1" top="0" tabpos="5">
+		<Cursor position="2979" topLine="94" />
+	</File>
+	<File name="Player.h" open="1" top="1" tabpos="6">
+		<Cursor position="7313" topLine="343" />
+	</File>
+	<File name="Room.h" open="1" top="0" tabpos="4">
+		<Cursor position="2215" topLine="83" />
+	</File>
+	<File name="TextParser.h" open="1" top="0" tabpos="3">
+		<Cursor position="198" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="4016" topLine="155" />
+	</File>
+	<File name="main.h" open="1" top="0" tabpos="2">
+		<Cursor position="317" topLine="0" />
+	</File>
+</CodeBlocks_layout_file>

@@ -1,0 +1,17 @@
+TITLE
+Nathan Park, Heather Hart, Legend of Dungeon
+
+PROBLEM DESCRIPTION
+You have a large amount of debt and are working as a free-lance miner on a planet with a network of tunnels to collect its gems and pay off your debt. Watch out! The beasts of this world won’t give up their precious gems without a fight! The game is a text based adventure game in which you type what you want to do.
+
+PROGRAM DOCUMENTATION
+At the beginning of the game, the user is prompted for the player name, which is also the file name used for saving data. So if the last time the user player, the user saved the game under with player name "Doctor", the game will load the file Doctor with the player's stats. All actions are preformed by typing them, such as "go north" and "take Sword". The user can look for a list of actions by typing "help". Letter case matters in actions that involve items. For instance, if you have a RedPotion, to consume said potion, type: "drink RedPotion". Potions are very important in this game. Be sure to  "look at the room inventory" for them when you enter a new room.
+
+There is a lot of room for adding additional content to the game: Plot, bosses, using the items to solve problems, and having specific actions for each item. Plot just requires more time to really imagine, and would be implemented in the description of rooms as the player gets deeper into the maze. Bosses would be a separate class with weaknesses to certain items when the item is used. Using items to solve problems would require having specific item functions such as "light torch" to light up a room and reveal its new exit or "assemble computer" to hack a locked door. 
+
+REQUIREMENTS 
+-tba-
+
+REFLECTIONS
+~Heather:
+~Nathan: 
