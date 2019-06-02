@@ -14,7 +14,7 @@ class Item
 private:
 	string name;	//NOTE: NAME MUST BE 1 WORD. "Red Gems" WILL *NOT* WORK. "Rubies" WILL.
 	string description;
-	string pickupDescription;	//so its like. You pick up the Sword. It feels heavy in your grasp. BADASS!
+	string pickupDescription;	//so its like. You pick up the Sword. It feels heavy in your grasp.
 	bool getable;
 
 	int hp;	//if item is a potion, hp=0. Else, it heals by the hp amount.
@@ -22,7 +22,7 @@ private:
 
 public:
 
-	//Look at all these constructors! You can totally customize your items! How cool is that?. Dude, like right now, everything works exactly the way i want it. So now you'll see some extremely optimistic comments to complement the suicide "wtfisthisshit" ones.
+	//Wow such constructors
 	Item(string Name, string Description)
 	{
 		name=Name;
@@ -58,7 +58,7 @@ public:
 		pickupDescription=PickUpDescription;
 		getable=Getable;
 		//is a potion.
-		if (HP>0)hp=HP; else hp=0;	//prolly could use a ternary operator here
+		if (HP>0)hp=HP; else hp=0;	//ternary operator go here?
 		worth=0;
 	}
 	//specifically for Gem creation
@@ -96,7 +96,7 @@ public:
 		return pickupDescription;
 	}
 
-	//this should totally be named GetDescription, but its too late for that.
+	//this should be named GetDescription, but its too late
 	void ReadDescription()
 	{
 		cout<<description<<endl;
@@ -106,19 +106,10 @@ public:
 		return getable;
 	}
 
-	//prototype
-	//bool operator == (const Item& other) const;
-
-	//!!!this lets you compare a string to an item. (suuuuper important)
-	//implementation	<-- written by a TA. i get what it does, but don't totally understand it.
+  // TA wrote this function, I don't get it
 	bool  operator==(const Item& item) const
 	{
 		return name == item.name;
 	}
-	/*void SetPickupDescription(string PickUpDescription)	//dont acutally need this.
-	{
-		pickupDescription=PickUpDescription;
-	}*/
-	//~Item(void);
 };
 

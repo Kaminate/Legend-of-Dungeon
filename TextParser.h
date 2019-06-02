@@ -23,19 +23,6 @@ private:
 	bool searchForItem ( list<string> userinputs, list<Item> inventory)
 	{
 		bool itemFound=false;
-		/*for each (string current_string in userinputs)
-		{
-			for each (Item current_item in inventory)
-			{
-				if (current_string.compare(current_item.GetName())==0)
-				{
-					itemFound=true;
-				}
-			}
-		}*/
-
-		//the below should do the same thing
-
 
 		for (int i=0;i<userinputs.size();i++)
 		{
@@ -70,19 +57,6 @@ private:
 	Item function (list<string> userinputs, list<Item> inventory)
 	{
 		bool itemFound=false;
-		/*for each (string current_string in userinputs)
-		{
-			for each (Item current_item in inventory)
-			{
-				//strcmp doesnt work with strings?
-				if (current_string.compare(current_item.GetName())==0)	//corrected (i think)
-				{
-					itemFound=true;
-					return current_item;
-				}
-			}
-		}*/
-
 
 		for (int i=0;i<userinputs.size();i++)
 		{
@@ -161,7 +135,7 @@ private:
 			/*
 			for each (string current_string in user_inputs)
 			{
-				//why isn't there a switch statement that works with strings?
+				//why doesn't the switch statement works with strings?
 
 				if (current_string.compare("north")==0 || current_string.compare("upstairs")==0) direction = "north";
 				else if (current_string.compare("south")==0 || current_string.compare("downstairs")==0) direction = "south";
@@ -210,14 +184,6 @@ private:
 
 		bool wordOneFound=false;
 		bool wordTwoFound=false;
-
-		//just search what they said and see if it contains words one and two
-		/*for each (string current_string in user_inputs)
-		{
-			if (current_string.compare(wordOne)==0) wordOneFound=true;
-			if (current_string.compare(wordTwo)==0) wordTwoFound=true;
-		}
-		*/
 		for (int i=0;i<user_inputs.size();i++)
 		{
 			string current_string = user_inputs.front();
@@ -236,7 +202,6 @@ private:
 		//if it does, then they want to search the inventory
 		if (wordOneFound==true && wordTwoFound==true)
 		{
-			//thus itemfound ==true
 			itemFound=true;
 			cout<<"You see:"<<endl;
 
@@ -245,10 +210,6 @@ private:
 			else
 			{
 				//else list the items in that inventory
-				/*for each (Item current_item in inventory)
-				{
-					cout<<current_item.GetName()<<endl;
-				}*/
 
 				for (int i=0;i<inventory.size();i++)
 				{
@@ -313,10 +274,10 @@ public:
 	//ctor.
 	TextParser()
 	{
-		//text parser actually has no private variables. In a perfect world, it would have actions, but it's not bad for a first try.
+		//no private variables. Should have have actions
 	}
 
-	//this is where the magic happens. This function has poetry at its fingertips.
+	// magic
 	bool ParseInput(Player& player, Room& room)
 	{
 
@@ -333,7 +294,11 @@ public:
 		string tempString;	//temp string holds the current word
 		int count;			//count holds the length of the word
 
-		//note: don't confuse userInput with userInputs. userInput is the string, userInputs is the list of strings. userInputCopy is a copy of userInput used to make userInputs.
+		// note:
+    //   don't confuse userInput with userInputs.
+    //   userInput is the string, userInputs is the list of strings.
+    //   userInputCopy is a copy of userInput used to make userInputs.
+    //   With me still?
 		list<string> userInputs;
 
 	#pragma region get words into a list
@@ -390,41 +355,13 @@ public:
 		if (check_for_list_inventory(userInputs, "player","inventory",player.Inventory)==true) return true;
 		if (check_for_list_inventory(userInputs, "room","inventory",room.Inventory)==true) return true;
 
-
 		//ok.
-
-
-
 
 		//1. see if the noun the user inputted is in the player.inventory then do stuff based on that
 		if (LookForNoun(userInputs, player.Inventory)==true)
 		{
 			//actually get the noun
 			Item noun = returnNoun(userInputs, player.Inventory);
-
-			//looking for the verb <-- old code using the for each loop. newer code doesnt use it
-			/*for each (string current_string in userInputs)
-			{
-				//this should only work for the player.inven
-				if (current_string.compare("drop")==0)
-				{
-					//if it was successful return true
-					player.DropItem(noun,room);
-					return true;
-				}
-				//this should only work for the player.inven
-				else if (current_string.compare( "use")==0)
-				{
-					player.UseItem(noun);
-					return true;
-				}
-				//this should only work for the player.inven
-				else if (current_string.compare( "drink")==0)
-				{
-					player.DrinkItem(noun);
-					return true;
-				}
-			}*/
 
 			for (int i=0;i<userInputs.size();i++)
 			{
@@ -466,17 +403,6 @@ public:
 			//actually get the noun
 			Item noun = returnNoun(userInputs, room.Inventory);
 
-			//looking for the verb for verb. <-- old code using the for each loop. newer code doesnt use it
-			/*for each (string current_string in userInputs)
-			{
-				//this should only work for the room.inven
-				if (current_string.compare( "take")==0)
-				{
-					player.TakeItem(noun,room);
-					return true;
-				}
-			}*/
-
 			for (int i=0;i<userInputs.size();i++)
 			{
 				string current_string = userInputs.front();
@@ -495,7 +421,5 @@ public:
 		//note: if there is NO NOUN, then we are DONE:   thus return false;
 		else return false;
 	}
-
-	//~TextParser(void);
 };
 

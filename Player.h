@@ -102,47 +102,6 @@ public:
 		return is;
 	}
 
-
-	/* trial 2. same error messages.
-	istream& operator >> (istream& is)
-	{
-		//loading
-		string tempString;
-		int tempInt;
-
-		//set name
-		getline(is, tempString); setName(tempString);
-		//set description
-		getline(is, tempString); setDescription(tempString);
-		//set money_in_debt
-		is>>tempInt; setMoney_in_Debt(tempInt);
-		//set level
-		is>>tempInt; setLevel (tempInt);
-		//set stats
-		is>>tempInt; setAttack(tempInt);
-		is>>tempInt; setDefense(tempInt);
-		is>>tempInt; setMaxHP(tempInt);
-		is>>tempInt; setCurrentHP(tempInt);
-		is>>tempInt; setExperience(tempInt);
-
-	}*/
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 	//overloeaded << operator. write to file ( saving)
 	friend ostream& operator<< (ostream& os, Player player)
 	{
@@ -185,7 +144,7 @@ public:
 	{
 		if (gemValue>0) money_in_debt-=gemValue;
 	}
-	//note: you might need to write more setters.
+	//might need to write more setters
 
 	//update experience() <-- you should write this heather, unless you already have somewhere
 	//level up!()
@@ -268,14 +227,6 @@ public:
 		//check to see if item is in the inventory.
 		bool isInInventory=false;
 
-		/*for each (Item current_item in Inventory)
-		{
-			if (item==current_item)
-			{
-				isInInventory=true;
-			}
-		}*/
-
 		for (int i=0;i<Inventory.size();i++)
 		{
 			Item current_item = Inventory.front();
@@ -315,39 +266,11 @@ public:
 		}
 	}
 
-	//lets not do that now, lol.
+	//lets not do that now
 	void UseItem(Item item/*, Boss boss*/)
 	{
 		cout<<"Yeah, lets not do that yet. ( code is not written!)"<<endl;
 	}
-	//if (item is in player.inventory)
-	//	if (boss.weakness == item)
-	//		remove item from player.inventory
-	//		cout boss death text
-	//		add boss.inventory to room.inventory
-	//	else
-	//		cout boss.impervious_text;
-	//		playerHP-=boss.attack
-
-	//4.
-
-
-
-
-
-
-	//	Read or write data to disk using a non-operator-overloaded class member function (such as input() or output()).
-	//for high schores
-	//
-	//
-	//
-	//
-	//
-
-
-
-
-	//~Player(void);
 
 	//---SAVE GAME---
 	void saveGame()

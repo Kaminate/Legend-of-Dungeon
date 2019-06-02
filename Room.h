@@ -94,7 +94,7 @@ public:
 	{
 		Direction[0]=tolower(Direction[0]);
 
-		//if the direction changed, has_room_changed=true; <-- best way to do this?... hmm
+		//if the direction changed, has_room_changed=true
 
 		//has_room_changed=true;
 
@@ -106,7 +106,7 @@ public:
 		else if (Direction=="down") return dirDown;
 		else
 		{
-			//this below code... should never run(?).
+			//this should never run?
 			cout<<"Sorry, I don't understand what that directions means."<<endl;
 			has_room_changed=false;
 			return NG;
